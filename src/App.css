@@ -1,38 +1,80 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Basic styling for the game container */
+.game-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
 }
 
-.App-link {
-  color: #61dafb;
+/* Styling for the difficulty selector */
+.difficulty-selector {
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.difficulty-selector label {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+/* Responsive grid for the Minesweeper board */
+.board {
+  display: grid;
+  gap: 2px;
+  margin: 20px auto;
+  overflow: auto;
+}
+
+/* Cell styling */
+.cell {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ddd;
+  border: 1px solid #aaa;
+  font-size: 20px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.cell.revealed {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  cursor: default;
+}
+
+.cell.mine {
+  background-color: red;
+}
+
+.cell.flagged {
+  background-color: yellow;
+}
+
+/* Additional styling for game information */
+.game-info {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .board {
+    gap: 1px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .cell {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cell {
+    font-size: 14px;
   }
 }
